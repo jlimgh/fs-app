@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-4">
+            <form name="form" novalidate>
+              <div class="form-group">
+                <label for="usr">Input:</label>
+                <input type="text" id="float" class="form-control" ng-model="length" name="length" float-percentage="float" />
+                <strong> {{length}} </strong>
+                <br />
+                <span class="error" ng-show="form.length.$error.float"> 
+                  This is not a valid float number!
+                </span>
+                <span class="error" ng-show="form.length.$error.number">
+                  Range must be between 0 and 100!
+                </span>
+              </div>
+            </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/directives/float-percentage.js"></script>
+  </body>
+</html>
